@@ -1,0 +1,133 @@
+{
+    "command": {
+        "common": {
+            "set": {
+                "method": "set",
+                "set_value_mapping": [
+                    {
+                        "cmd_input_name": "ns",
+                        "param_name": "tenant"
+                    }
+                ]
+            }
+        },
+        "namespace": {
+            "list": {
+                "url_path": "/v1/console/namespaces",
+                "method": "list",
+                "need_body": false,
+                "data_path":"data",
+                "params": [
+                    {
+                        "key": "accessToken",
+                        "default_value": ""
+                    },
+                    {
+                        "key": "username",
+                        "default_value": ""
+                    }
+                ],
+                "output_format": {
+                    "show_type": "table",
+                    "table_show_names": [
+                        "name",
+                        "value"
+                    ],
+                    "table_show_fields": [
+                        "namespaceShowName",
+                        "namespace"
+                    ]
+                },
+                "recommend_cmds": [
+                    "lsdata",
+                    "getdata",
+                    "use"
+                ]
+            }
+        },
+        "config": {
+            "get": {
+                "url_path": "/v1/cs/configs",
+                "method": "get",
+                "need_body": true,
+                "about":"",
+                "params": [
+                    {
+                        "key": "tenant",
+                        "default_value": "",
+                        "required": true
+                    },
+                    {
+                        "key": "dataId",
+                        "default_value": "*",
+                        "required": true
+                    },
+                    {
+                        "key": "group",
+                        "default_value": "*",
+                        "required": true
+                    },
+                    {
+                        "key": "accessToken",
+                        "default_value": ""
+                    },
+                    {
+                        "key": "username",
+                        "default_value": ""
+                    }
+                ],
+                "output_format": {
+                    "show_type": "json",
+                    "table_show_names": [
+                        "name",
+                        "value"
+                    ],
+                    "table_show_fields": [
+                        "namespaceShowName",
+                        "namespace"
+                    ]
+                },
+                "recommend_cmds": [
+                    "lsdata",
+                    "getdata",
+                    "use"
+                ]
+            },
+            "update": {
+                "url_path": "/v1/cs/configs",
+                "method": "post",
+                "need_body": true,
+                "params": [
+                    {
+                        "key": "tenant",
+                        "default_value": ""
+                    },
+                    {
+                        "key": "dataId",
+                        "default_value": "*"
+                    },
+                    {
+                        "key": "group",
+                        "default_value": "*"
+                    }
+                ],
+                "output_format": {
+                    "show_type": "table",
+                    "table_show_names": [
+                        "name",
+                        "value"
+                    ],
+                    "table_show_fields": [
+                        "namespaceShowName",
+                        "namespace"
+                    ]
+                },
+                "recommend_cmds": [
+                    "lsdata",
+                    "getdata",
+                    "use"
+                ]
+            }
+        }
+    }
+}
